@@ -52,3 +52,13 @@
 ```
 
     
+
+---
+
+![](./4-productive-time.svg)
+
+```
+![](https://raw.githubusercontent.com/42zz/42zz/master/profile-summary-card-output/default/4-productive-time.svg)
+```
+
+    

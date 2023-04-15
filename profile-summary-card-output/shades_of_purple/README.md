@@ -52,3 +52,13 @@
 ```
 
     
+
+---
+
+![](./4-productive-time.svg)
+
+```
+![](https://raw.githubusercontent.com/42zz/42zz/master/profile-summary-card-output/shades_of_purple/4-productive-time.svg)
+```
+
+    

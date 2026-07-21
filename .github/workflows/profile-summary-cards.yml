@@ -1,11 +1,15 @@
 name: GitHub-Profile-Summary-Cards
 
 on:
-  create:
   push:
-  schedule: # execute every 24 hours
-    - cron: "* */24 * * *"
+    branches:
+      - master
+  schedule: # execute once every 24 hours
+    - cron: "0 0 * * *"
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -13,9 +17,12 @@ jobs:
     name: generate
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: vn7n24fzkq/github-profile-summary-cards@release
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      # v0.11.x exceeds GitHub's GraphQL resource limits for this profile.
+      # Keep the last version verified to generate all cards successfully.
+      - uses: vn7n24fzkq/github-profile-summary-cards@bbad2a3b8a67e98c7a347906fe70ee9e1c81b1fb # v0.9.2
         env:
           GITHUB_TOKEN: ${{ secrets.SUMMARY_CARDS_TOKEN }}
         with:
           USERNAME: ${{ github.repository_owner }}
+          BRANCH_NAME: master
